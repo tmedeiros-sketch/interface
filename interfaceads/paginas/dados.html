@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📊 Dados — COSMOS</title>
+
+  <link rel="icon" type="image/png" href="../icones/favicon.png" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <span id="topo"></span>
+
+  <header>
+    <nav>
+      <a href="../index.html" class="nav-logo">✦ COSMOS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="dados.html" class="ativo">Dados</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero-dados">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Comparações e Estatísticas</span>
+      <h1>Dados Espaciais</h1>
+      <h2>Números que Definem o Cosmos</h2>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <span id="tabelas"></span>
+    <section>
+      <h3>Tabelas Comparativas</h3>
+      <div class="linha-divisora"></div>
+
+      <p>
+        A astronomia é uma ciência de escalas extremas. Os números que descrevem planetas, estrelas
+        e galáxias frequentemente ultrapassam nossa capacidade intuitiva de compreensão. As tabelas
+        abaixo organizam essas informações de forma comparativa, permitindo visualizar as diferenças
+        e semelhanças entre os corpos celestes do nosso Sistema Solar e algumas das missões espaciais
+        mais importantes da história humana.
+      </p>
+
+      <!-- ===== TABELA 1 — Planetas ===== -->
+      <span id="planetas"></span>
+      <div class="card">
+        <h3>🪐 Tabela 1 — Planetas do Sistema Solar</h3>
+        <p>Dados físicos e orbitais dos oito planetas reconhecidos pela União Astronômica Internacional:</p>
+        <div style="overflow-x: auto;">
+          <table class="tabela-zebra">
+            <thead>
+              <tr>
+                <th>Planeta</th>
+                <th>Diâmetro (km)</th>
+                <th>Distância ao Sol (UA)</th>
+                <th>Período Orbital</th>
+                <th>Nº de Luas</th>
+                <th>Atmosfera</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>☿ Mercúrio</td>
+                <td>4.879</td>
+                <td>0,39</td>
+                <td>88 dias</td>
+                <td>0</td>
+                <td>Exosfera tênue</td>
+              </tr>
+              <tr>
+                <td>♀ Vênus</td>
+                <td>12.104</td>
+                <td>0,72</td>
+                <td>225 dias</td>
+                <td>0</td>
+                <td>CO₂ denso</td>
+              </tr>
+              <tr>
+                <td>🌍 Terra</td>
+                <td>12.756</td>
+                <td>1,00</td>
+                <td>365,25 dias</td>
+                <td>1</td>
+                <td>N₂ + O₂</td>
+              </tr>
+              <tr>
+                <td>♂ Marte</td>
+                <td>6.792</td>
+                <td>1,52</td>
+                <td>687 dias</td>
+                <td>2</td>
+                <td>CO₂ rarefeito</td>
+              </tr>
+              <tr>
+                <td>♃ Júpiter</td>
+                <td>142.984</td>
+                <td>5,20</td>
+                <td>11,9 anos</td>
+                <td>95</td>
+                <td>H₂ + He</td>
+              </tr>
+              <tr>
+                <td>♄ Saturno</td>
+                <td>120.536</td>
+                <td>9,58</td>
+                <td>29,5 anos</td>
+                <td>146</td>
+                <td>H₂ + He</td>
+              </tr>
+              <tr>
+                <td>⛢ Urano</td>
+                <td>51.118</td>
+                <td>19,22</td>
+                <td>84 anos</td>
+                <td>28</td>
+                <td>H₂ + He + CH₄</td>
+              </tr>
+              <tr>
+                <td>♆ Netuno</td>
+                <td>49.528</td>
+                <td>30,05</td>
+                <td>164,8 anos</td>
+                <td>16</td>
+                <td>H₂ + He + CH₄</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.78rem; opacity:0.6;">UA = Unidade Astronômica ≈ 149,6 milhões de km (distância Terra–Sol)</p>
+      </div>
+
+      <hr class="separador-lista" />
+
+      <!-- ===== TABELA 2 — Missões ===== -->
+      <span id="missoes"></span>
+      <div class="card">
+        <h3>🚀 Tabela 2 — Missões Espaciais Históricas</h3>
+        <p>Comparativo entre as principais missões que marcaram a corrida espacial e a era moderna:</p>
+        <div style="overflow-x: auto;">
+          <table class="tabela-colorida">
+            <thead>
+              <tr>
+                <th>Missão</th>
+                <th>Agência</th>
+                <th>Ano</th>
+                <th>Destino</th>
+                <th>Tripulada?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sputnik 1</strong></td>
+                <td>Roscosmos (URSS)</td>
+                <td>1957</td>
+                <td>Órbita terrestre</td>
+                <td><span class="badge-nao">Não</span></td>
+              </tr>
+              <tr>
+                <td><strong>Vostok 1</strong></td>
+                <td>Roscosmos (URSS)</td>
+                <td>1961</td>
+                <td>Órbita terrestre</td>
+                <td><span class="badge-sim">Sim</span></td>
+              </tr>
+              <tr>
+                <td><strong>Apollo 11</strong></td>
+                <td>NASA</td>
+                <td>1969</td>
+                <td>Lua</td>
+                <td><span class="badge-sim">Sim</span></td>
+              </tr>
+              <tr>
+                <td><strong>Voyager 1</strong></td>
+                <td>NASA</td>
+                <td>1977</td>
+                <td>Espaço interestelar</td>
+                <td><span class="badge-nao">Não</span></td>
+              </tr>
+              <tr>
+                <td><strong>Mars Pathfinder</strong></td>
+                <td>NASA</td>
+                <td>1997</td>
+                <td>Marte</td>
+                <td><span class="badge-nao">Não</span></td>
+              </tr>
+              <tr>
+                <td><strong>ISS (Zarya)</strong></td>
+                <td>NASA / Roscosmos</td>
+                <td>1998</td>
+                <td>Órbita terrestre</td>
+                <td><span class="badge-sim">Sim</span></td>
+              </tr>
+              <tr>
+                <td><strong>New Horizons</strong></td>
+                <td>NASA</td>
+                <td>2006</td>
+                <td>Plutão / Kuiper</td>
+                <td><span class="badge-nao">Não</span></td>
+              </tr>
+              <tr>
+                <td><strong>Perseverance</strong></td>
+                <td>NASA</td>
+                <td>2021</td>
+                <td>Marte</td>
+                <td><span class="badge-nao">Não</span></td>
+              </tr>
+              <tr>
+                <td><strong>Artemis I</strong></td>
+                <td>NASA</td>
+                <td>2022</td>
+                <td>Lua</td>
+                <td><span class="badge-nao">Não</span></td>
+              </tr>
+              <tr>
+                <td><strong>Artemis II</strong></td>
+                <td>NASA</td>
+                <td>2025</td>
+                <td>Órbita lunar</td>
+                <td><span class="badge-previsto">Previsto</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <span id="navegar"></span>
+    <section class="text-center">
+      <a href="galeria.html" class="btn">🖼 Ver Galeria</a>
+      &nbsp;&nbsp;
+      <a href="contato.html" class="btn btn-solid">📡 Formulário</a>
+      &nbsp;&nbsp;
+      <a href="../index.html" class="btn">🏠 Início</a>
+    </section>
+
+    <a href="#topo" class="ancora-topo">↑ Voltar ao topo</a>
+  </main>
+
+  <footer>
+    <p>✦ COSMOS &nbsp;|&nbsp; Dados Espaciais &nbsp;|&nbsp; Thiago &copy; 2025</p>
+  </footer>
+
+</body>
+</html>

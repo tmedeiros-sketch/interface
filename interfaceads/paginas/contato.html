@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📡 Contato — COSMOS</title>
+
+  <link rel="icon" type="image/png" href="../icones/favicon.png" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <span id="topo"></span>
+
+  <header>
+    <nav>
+      <a href="../index.html" class="nav-logo">✦ COSMOS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="dados.html">Dados</a></li>
+        <li><a href="contato.html" class="ativo">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero-contato">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Entre em Contato</span>
+      <h1>Missão: Contato</h1>
+      <h2>Envie Sua Mensagem ao Cosmos</h2>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <span id="formulario"></span>
+    <section>
+      <h3>Formulário de Contato</h3>
+      <div class="linha-divisora"></div>
+
+      <p>
+        Preencha o formulário abaixo para entrar em contato com a equipe COSMOS. Todos os campos
+        marcados com * são obrigatórios para que possamos responder com precisão. Nossa equipe
+        responde em até <strong>48 horas terrestres</strong> após o recebimento da sua mensagem.
+      </p>
+
+      <!-- ===== FORMULÁRIO ===== -->
+      <form id="formCosmos" action="#" method="post" onsubmit="handleSubmit(event)">
+
+        <!-- FIELDSET 1 — Identificação -->
+        <fieldset>
+          <legend>👤 Identificação do Explorador</legend>
+          <div class="form-grid">
+
+            <!-- 1. Nome (input text) -->
+            <div>
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome"
+                     placeholder="Ex: Neil Armstrong" required />
+            </div>
+
+            <!-- 2. E-mail (input email) -->
+            <div>
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email"
+                     placeholder="astronauta@cosmos.br" required />
+            </div>
+
+            <!-- 3. Data de nascimento (input date) -->
+            <div>
+              <label for="nascimento">Data de nascimento</label>
+              <input type="date" id="nascimento" name="nascimento" />
+            </div>
+
+            <!-- 4. País (select) -->
+            <div>
+              <label for="pais">País de origem</label>
+              <select id="pais" name="pais">
+                <option value="">Selecione...</option>
+                <option value="BR">🇧🇷 Brasil</option>
+                <option value="US">🇺🇸 Estados Unidos</option>
+                <option value="RU">🇷🇺 Rússia</option>
+                <option value="CN">🇨🇳 China</option>
+                <option value="EU">🇪🇺 Europa</option>
+                <option value="OUT">Outro</option>
+              </select>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- FIELDSET 2 — Área de Interesse -->
+        <fieldset>
+          <legend>🌌 Área de Interesse</legend>
+
+          <!-- 5. Nível de conhecimento (select) -->
+          <label for="nivel">Nível de conhecimento em astronomia</label>
+          <select id="nivel" name="nivel">
+            <option value="iniciante">🌱 Iniciante — Estou começando agora</option>
+            <option value="intermediario">🔭 Intermediário — Já conheço o básico</option>
+            <option value="avancado">🚀 Avançado — Estudo regularmente</option>
+            <option value="profissional">👨‍🔬 Profissional — Trabalho na área</option>
+          </select>
+
+          <!-- 6. Tópico (RADIO — obrigatório) -->
+          <label>Tópico de maior interesse: *</label>
+          <div class="opcoes-inline">
+            <label><input type="radio" name="topico" value="planetas"  required /> Planetas</label>
+            <label><input type="radio" name="topico" value="estrelas"          /> Estrelas e Nebulosas</label>
+            <label><input type="radio" name="topico" value="galaxias"          /> Galáxias</label>
+            <label><input type="radio" name="topico" value="missoes"           /> Missões Espaciais</label>
+            <label><input type="radio" name="topico" value="vida"              /> Vida Extraterrestre</label>
+            <label><input type="radio" name="topico" value="buraco"            /> Buracos Negros</label>
+          </div>
+
+          <!-- 7. Como conheceu (select) -->
+          <label for="origem">Como conheceu o projeto COSMOS?</label>
+          <select id="origem" name="origem">
+            <option value="">Selecione...</option>
+            <option value="escola">Escola / Universidade</option>
+            <option value="redes">Redes Sociais</option>
+            <option value="busca">Mecanismo de Busca</option>
+            <option value="amigo">Indicação de amigo</option>
+            <option value="outro">Outro</option>
+          </select>
+
+        </fieldset>
+
+        <!-- FIELDSET 3 — Preferências -->
+        <fieldset>
+          <legend>⚙️ Preferências de Contato</legend>
+
+          <!-- 8. CHECKBOXES — obrigatório ao menos um -->
+          <label>Desejo receber informações sobre: * (selecione ao menos uma)</label>
+          <div class="opcoes-inline">
+            <label><input type="checkbox" name="interesses" value="noticias"    /> Notícias espaciais</label>
+            <label><input type="checkbox" name="interesses" value="eventos"     /> Eventos astronômicos</label>
+            <label><input type="checkbox" name="interesses" value="newsletter"  /> Newsletter mensal</label>
+            <label><input type="checkbox" name="interesses" value="cursos"      /> Cursos online</label>
+            <label><input type="checkbox" name="interesses" value="downloads"   /> Materiais para download</label>
+          </div>
+
+          <!-- 9. Canal de contato (RADIO) -->
+          <label>Prefiro ser contactado por: *</label>
+          <div class="opcoes-inline">
+            <label><input type="radio" name="canal" value="email"    required /> E-mail</label>
+            <label><input type="radio" name="canal" value="whatsapp"          /> WhatsApp</label>
+            <label><input type="radio" name="canal" value="nenhum"            /> Não precisa me contatar</label>
+          </div>
+
+          <!-- 10. Mensagem (textarea) -->
+          <div class="full">
+            <label for="mensagem">Sua mensagem ou pergunta *</label>
+            <textarea id="mensagem" name="mensagem" rows="5"
+              placeholder="Escreva sua mensagem aqui... Uma dúvida, sugestão ou apenas um olá do planeta Terra 🌍"
+              required></textarea>
+          </div>
+
+          <!-- 11. Concordância (checkbox) -->
+          <label>
+            <input type="checkbox" name="concordo" value="sim" required />
+            &nbsp;Concordo com os termos de uso e política de privacidade do projeto COSMOS *
+          </label>
+
+        </fieldset>
+
+        <!-- BOTÃO RESET e ENVIAR -->
+        <div class="form-actions">
+          <button type="reset"  class="btn">↺ Resetar</button>
+          <button type="submit" class="btn btn-solid">🚀 Enviar Missão</button>
+        </div>
+
+      </form>
+
+      <!-- Mensagem de sucesso (aparece via JS) -->
+      <div id="successMsg" style="
+        display: none;
+        background: rgba(52,211,153,0.1);
+        border: 1px solid #34d399;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        color: #34d399;
+        font-family: var(--fonte-display);
+        letter-spacing: 2px;
+        margin-top: 1rem;
+      ">
+        ✅ Mensagem enviada com sucesso! Aguarde nosso contato em até 48h.
+      </div>
+
+    </section>
+
+    <span id="navegar"></span>
+    <section class="text-center mt-2">
+      <a href="galeria.html" class="btn">🖼 Galeria Espacial</a>
+      &nbsp;&nbsp;
+      <a href="dados.html" class="btn">📊 Tabelas de Dados</a>
+      &nbsp;&nbsp;
+      <a href="../index.html" class="btn btn-solid">🏠 Início</a>
+    </section>
+
+    <a href="#topo" class="ancora-topo">↑ Voltar ao topo</a>
+  </main>
+
+  <footer>
+    <p>✦ COSMOS &nbsp;|&nbsp; Formulário de Contato &nbsp;|&nbsp; Thiago &copy; 2025</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const checks = document.querySelectorAll('input[name="interesses"]:checked');
+      if (checks.length === 0) {
+        alert('Por favor, selecione ao menos um interesse!');
+        return;
+      }
+      document.getElementById('formCosmos').style.display = 'none';
+      const msg = document.getElementById('successMsg');
+      msg.style.display = 'block';
+      msg.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

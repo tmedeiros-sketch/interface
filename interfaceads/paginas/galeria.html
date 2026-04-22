@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌 Galeria — COSMOS</title>
+
+  <!-- Favicon local -->
+  <link rel="icon" type="image/png" href="../icones/favicon.png" />
+
+  <!-- CSS fica um nível acima (raiz do projeto) -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <span id="topo"></span>
+
+  <header>
+    <nav>
+      <a href="../index.html" class="nav-logo">✦ COSMOS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="galeria.html" class="ativo">Galeria</a></li>
+        <li><a href="dados.html">Dados</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO com imagem local -->
+  <section class="hero hero-galeria">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Imagens do Cosmos</span>
+      <h1>Galeria Espacial</h1>
+      <h2>Fotografias que Inspiram</h2>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Âncora: Galeria -->
+    <span id="galeria"></span>
+    <section>
+      <h3>As Imagens mais Incríveis do Universo</h3>
+      <div class="linha-divisora"></div>
+
+      <p>
+        A fotografia espacial transformou nossa relação com o cosmos. O que antes era apenas imaginação
+        ganhou forma visual através de instrumentos sofisticados como telescópios orbitais, sondas
+        interplanetárias e câmeras de alta resolução instaladas em satélites. <strong>Cada imagem conta
+        uma história de bilhões de anos</strong>, registrando fenômenos que ocorrem em escalas de tempo
+        e espaço incompreensíveis para a mente humana. Desde a delicada estrutura de uma nebulosa em
+        colapso até a majestosa espiral de uma galáxia distante, essas fotografias são, ao mesmo tempo,
+        <em>documentos científicos e obras de arte cósmicas</em> que nos convidam a refletir sobre nosso
+        lugar no universo.
+      </p>
+
+      <!-- 5 IMAGENS — caminhos locais -->
+      <div class="galeria-grande">
+        <div class="galeria-item g1">
+          <img src="../imagens/imagem1.jpg" alt="Nebulosa colorida no espaço profundo" />
+          <span class="galeria-caption">Nebulosa — Espaço Profundo</span>
+        </div>
+        <div class="galeria-item g2">
+          <img src="../imagens/imagem2.jpg" alt="Galáxia espiral" />
+          <span class="galeria-caption">Galáxia Espiral</span>
+        </div>
+        <div class="galeria-item g3">
+          <img src="../imagens/imagem3.jpg" alt="Vista da Terra do espaço" />
+          <span class="galeria-caption">Terra Vista do Espaço</span>
+        </div>
+        <div class="galeria-item g4">
+          <img src="../imagens/imagem4.jpg" alt="Superfície da Lua" />
+          <span class="galeria-caption">Superfície Lunar</span>
+        </div>
+        <div class="galeria-item g5">
+          <img src="../imagens/imagem5.jpg" alt="Marte - planeta vermelho" />
+          <span class="galeria-caption">Marte — Planeta Vermelho</span>
+        </div>
+      </div>
+
+      <p>
+        As cinco imagens acima representam destinos e fenômenos que definem o imaginário da exploração
+        espacial contemporânea. A <u>nebulosa</u>, no canto superior esquerdo, é um berçário estelar —
+        nuvens de gás e poeira onde novas estrelas nascem ao longo de milhões de anos. A galáxia espiral
+        nos lembra que a Via Láctea é apenas uma entre incontáveis estruturas similares no universo
+        observável. A <strong>Terra vista do espaço</strong>, popularizada pela famosa fotografia
+        "Pale Blue Dot" de Carl Sagan, é um lembrete da fragilidade e unicidade do nosso planeta.
+        A Lua e Marte representam os dois principais destinos das próximas décadas de exploração
+        <em>humana</em> além da Terra.
+      </p>
+    </section>
+
+    <!-- Âncora: Mídia -->
+    <span id="midia"></span>
+    <section>
+      <h3>Vídeo e Áudio</h3>
+      <div class="linha-divisora"></div>
+
+      <!-- VÍDEO LOCAL -->
+      <div class="card">
+        <h3 class="mb-1">🎬 Vídeo: Viagem pelo Sistema Solar</h3>
+        <p>
+          Assista a uma simulação visual da imensidão do nosso Sistema Solar, com uma perspectiva
+          que raramente conseguimos imaginar olhando para o céu noturno.
+        </p>
+        <div class="media-wrapper">
+          <video controls poster="../imagens/imagem1.jpg">
+            <source src="../videos/video.mp4" type="video/mp4" />
+            <source src="../videos/video.webm" type="video/webm" />
+            Seu navegador não suporta a reprodução de vídeo. Por favor, atualize-o.
+          </video>
+        </div>
+      </div>
+
+      <!-- ÁUDIO LOCAL -->
+      <div class="card">
+        <h3 class="mb-1">🎙️ Áudio: Sons do Universo</h3>
+        <p>
+          A NASA converte dados de ondas de plasma e campos magnéticos captados por suas sondas em
+          áudio — resultando em <em>"sons do espaço"</em> fascinantes. Buracos negros, anéis de
+          Saturno e até a atmosfera de Júpiter já foram "traduzidos" em ondas sonoras para que
+          possamos <strong>ouvir o cosmos</strong> de uma forma completamente nova e surpreendente.
+        </p>
+        <div class="media-wrapper">
+          <span class="audio-label">▶ Reproduzir Áudio Espacial</span>
+          <audio controls>
+            <source src="../audios/audio.ogg" type="audio/ogg" />
+            <source src="../audios/audio.mp3" type="audio/mpeg" />
+            Seu navegador não suporta a tag de áudio. Por favor, atualize-o.
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links internos -->
+    <span id="navegar"></span>
+    <section class="text-center">
+      <a href="dados.html" class="btn">📊 Ver Tabelas de Dados</a>
+      &nbsp;&nbsp;
+      <a href="contato.html" class="btn btn-solid">📡 Ir ao Formulário</a>
+      &nbsp;&nbsp;
+      <a href="../index.html" class="btn">🏠 Início</a>
+    </section>
+
+    <a href="#topo" class="ancora-topo">↑ Voltar ao topo</a>
+  </main>
+
+  <footer>
+    <p>✦ COSMOS &nbsp;|&nbsp; Galeria Espacial &nbsp;|&nbsp; Thiago &copy; 2025</p>
+  </footer>
+
+</body>
+</html>

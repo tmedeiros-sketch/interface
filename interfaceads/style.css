@@ -1,0 +1,668 @@
+/* ========================================
+   COSMOS - Exploração Espacial
+   style.css — Estilos Globais
+   ======================================== */
+
+@font-face {
+  font-family: 'OrbitronLocal';
+  src: url('./fontes/orbitron.woff2') format('woff2'),
+       url('./fontes/orbitron.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Fallback: se não tiver a fonte local, usa Google Fonts via import */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+/* ========================================
+   1. VARIÁVEIS GLOBAIS
+   ======================================== */
+:root {
+  --cor-fundo:       #03010a;
+  --cor-fundo2:      #07031a;
+  --cor-primaria:    #00d4ff;
+  --cor-secundaria:  #a855f7;
+  --cor-acento:      #f97316;
+  --cor-texto:       #cbd5e1;
+  --cor-texto-claro: #f1f5f9;
+  --cor-borda:       rgba(0, 212, 255, 0.25);
+  --fonte-display:   'Orbitron', 'OrbitronLocal', monospace;
+  --fonte-corpo:     'Exo 2', Arial, sans-serif;
+  --raio:            8px;
+  --sombra-glow:     0 0 20px rgba(0, 212, 255, 0.4);
+  --sombra-roxo:     0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+/* ========================================
+   2. RESET E BASE
+   ======================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   3. BODY — fundo e tipografia base
+   ======================================== */
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.8;
+  font-size: 1rem;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(168, 85, 247, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.06) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Efeito de estrelas fixas no fundo */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 30%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 10%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 85%, rgba(0,212,255,0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 45%, rgba(168,85,247,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35%  5%, rgba(255,255,255,0.7) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========================================
+   4. HEADER
+   ======================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(3, 1, 10, 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 0 2rem;
+}
+
+/* ========================================
+   5. NAV / MENU
+   ======================================== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 68px;
+}
+
+.nav-logo {
+  font-family: var(--fonte-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--cor-primaria);
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-shadow: var(--sombra-glow);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: var(--fonte-display);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--cor-texto);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+  color: var(--cor-primaria);
+  border-bottom-color: var(--cor-primaria);
+}
+
+/* ========================================
+   6. CONTAINER PRINCIPAL
+   ======================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   7. TIPOGRAFIA — TÍTULOS
+   ======================================== */
+h1 {
+  font-family: var(--fonte-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--cor-texto-claro);
+  text-align: center;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.6), 0 0 60px rgba(0, 212, 255, 0.2);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: var(--fonte-display);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--cor-primaria);
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
+}
+
+h3 {
+  font-family: var(--fonte-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   8. PARÁGRAFOS E FORMATAÇÃO DE TEXTO
+   ======================================== */
+p {
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  font-weight: 300;
+}
+
+strong, b {
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+em, i {
+  font-style: italic;
+  color: #c084fc;
+}
+
+u {
+  text-decoration-color: var(--cor-acento);
+  text-underline-offset: 4px;
+}
+
+del {
+  color: #64748b;
+}
+
+/* ========================================
+   9. SEÇÕES E CARDS
+   ======================================== */
+section {
+  margin: 3rem 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: var(--sombra-glow);
+}
+
+/* ========================================
+   10. LISTAS
+   ======================================== */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.lista-bloco {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-bloco li {
+  padding: 0.6rem 1rem;
+  border-left: 3px solid var(--cor-secundaria);
+  margin-bottom: 0.6rem;
+  background: rgba(168, 85, 247, 0.06);
+  border-radius: 0 var(--raio) var(--raio) 0;
+}
+
+.separador-lista {
+  border: none;
+  border-top: 1px dashed var(--cor-borda);
+  margin: 2rem 0;
+}
+
+/* ========================================
+   11. LINKS
+   ======================================== */
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color 0.25s, text-shadow 0.25s;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: var(--sombra-glow);
+}
+
+/* ========================================
+   12. HERO — imagem de entrada com overlay
+   ======================================== */
+.hero {
+  width: 100%;
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 5rem 2rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.35);
+  z-index: 0;
+}
+
+/* Hero de cada página usa imagem local */
+.hero-index   .hero-bg { background-image: url('./imagens/imagem1.jpg'); }
+.hero-galeria .hero-bg { background-image: url('./imagens/imagem2.jpg'); }
+.hero-dados   .hero-bg { background-image: url('./imagens/imagem3.jpg'); }
+.hero-contato .hero-bg { background-image: url('./imagens/imagem4.jpg'); }
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: var(--fonte-display);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  border: 1px solid var(--cor-borda);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   13. BOTÕES
+   ======================================== */
+.btn {
+  display: inline-block;
+  font-family: var(--fonte-display);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  box-shadow: var(--sombra-glow);
+}
+
+.btn-solid {
+  background: var(--cor-secundaria);
+  border-color: var(--cor-secundaria);
+  color: #fff;
+}
+
+.btn-solid:hover {
+  background: transparent;
+  color: var(--cor-secundaria);
+  box-shadow: var(--sombra-roxo);
+}
+
+/* ========================================
+   14. FOOTER
+   ======================================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--cor-borda);
+  font-size: 0.8rem;
+  color: #475569;
+  font-family: var(--fonte-display);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   15. ÂNCORA DE RETORNO AO TOPO
+   ======================================== */
+.ancora-topo {
+  display: block;
+  text-align: right;
+  font-size: 0.75rem;
+  font-family: var(--fonte-display);
+  letter-spacing: 2px;
+  margin-top: 1rem;
+  color: var(--cor-secundaria);
+}
+
+/* ========================================
+   16. TABELAS
+   ======================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 0.92rem;
+}
+
+thead {
+  background: rgba(0, 212, 255, 0.1);
+}
+
+th {
+  font-family: var(--fonte-display);
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--cor-primaria);
+  text-align: left;
+}
+
+td {
+  padding: 11px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+tr:hover td {
+  background: rgba(0, 212, 255, 0.04);
+}
+
+.tabela-zebra tr:nth-child(even) td {
+  background: rgba(168, 85, 247, 0.06);
+}
+
+.tabela-colorida th:nth-child(1) { color: var(--cor-acento);   border-bottom-color: var(--cor-acento); }
+.tabela-colorida th:nth-child(2) { color: #34d399;             border-bottom-color: #34d399; }
+.tabela-colorida th:nth-child(3) { color: var(--cor-primaria); border-bottom-color: var(--cor-primaria); }
+.tabela-colorida th:nth-child(4) { color: var(--cor-secundaria); border-bottom-color: var(--cor-secundaria); }
+.tabela-colorida th:nth-child(5) { color: #fbbf24;             border-bottom-color: #fbbf24; }
+
+.badge-sim          { background: rgba(52,211,153,0.15); color: #34d399; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; }
+.badge-nao          { background: rgba(239,68,68,0.15);  color: #f87171; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; }
+.badge-previsto     { background: rgba(251,191,36,0.15); color: #fbbf24; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; }
+
+/* ========================================
+   17. FORMULÁRIO
+   ======================================== */
+fieldset {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-family: var(--fonte-display);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  padding: 0 12px;
+}
+
+label {
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  color: var(--cor-texto-claro);
+  font-family: var(--fonte-corpo);
+  font-size: 0.92rem;
+  padding: 10px 14px;
+  margin-top: 4px;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.opcoes-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.opcoes-inline label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+  font-size: 0.88rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--cor-primaria);
+  width: 16px;
+  height: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem;
+}
+
+.form-grid .full { grid-column: 1 / -1; }
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ========================================
+   18. MÍDIA — vídeo e áudio
+   ======================================== */
+.media-wrapper {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+audio {
+  width: 100%;
+  display: block;
+  background: rgba(168, 85, 247, 0.05);
+  padding: 1rem;
+}
+
+.audio-label {
+  font-family: var(--fonte-display);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cor-secundaria);
+  display: block;
+  padding: 0.8rem 1rem 0;
+}
+
+/* ========================================
+   19. GALERIA DE IMAGENS
+   ======================================== */
+.galeria-grande {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.galeria-grande .g1 { grid-column: 1 / 8; }
+.galeria-grande .g2 { grid-column: 8 / 13; }
+.galeria-grande .g3 { grid-column: 1 / 5; }
+.galeria-grande .g4 { grid-column: 5 / 9; }
+.galeria-grande .g5 { grid-column: 9 / 13; }
+
+.galeria-item {
+  position: relative;
+  border-radius: var(--raio);
+  overflow: hidden;
+  border: 1px solid var(--cor-borda);
+  height: 220px;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s, filter 0.4s;
+  filter: brightness(0.8) saturate(1.1);
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1) saturate(1.3);
+}
+
+.galeria-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(3,1,10,0.9));
+  padding: 1.5rem 1rem 0.8rem;
+  font-family: var(--fonte-display);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+}
+
+/* ========================================
+   20. UTILITÁRIOS E DIVISORES
+   ======================================== */
+.linha-divisora {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 2rem; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: var(--fonte-display);
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--cor-secundaria);
+  color: var(--cor-secundaria);
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+/* ========================================
+   21. FAVICON via ícone local
+   ======================================== */
+/* (definido via <link> no HTML apontando para ./icones/favicon.png) */
+
+/* ========================================
+   22. RESPONSIVIDADE
+   ======================================== */
+@media (max-width: 680px) {
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.6rem; }
+
+  .galeria-grande { grid-template-columns: 1fr; }
+  .galeria-grande .g1,
+  .galeria-grande .g2,
+  .galeria-grande .g3,
+  .galeria-grande .g4,
+  .galeria-grande .g5 { grid-column: 1; }
+  .galeria-grande .galeria-item { height: 200px; }
+
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .full { grid-column: 1; }
+  .form-actions { flex-direction: column; }
+}
